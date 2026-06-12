@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -13,34 +13,39 @@
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   <style>
     :root {
-      --bg: #ffffff;
-      --bg2: #f8f9fa;
-      --surface: #ffffff;
-      --surface2: #f1f3f5;
-      --border: rgba(0, 0, 0, 0.08);
-      --border2: rgba(0, 0, 0, 0.15);
-      --accent: #2563eb;
-      --accent2: #7c3aed;
-      --accent3: #f59e0b;
-      --text: #111827;
-      --text2: #4b5563;
-      --text3: #6b7280;
-      --glow: 0 0 40px rgba(37, 99, 235, 0.15);
-      --glow2: 0 0 60px rgba(124, 58, 237, 0.12);
-      --nav-bg: rgba(255, 255, 255, 0.85);
+      --bg: #f0f4f9;
+      --bg2: #e8f0fe;
+      --surface: rgba(255, 255, 255, 0.7);
+      --surface2: rgba(232, 240, 254, 0.6);
+      --border: rgba(66, 133, 244, 0.12);
+      --border2: rgba(155, 81, 224, 0.2);
+      --accent: #1a73e8;
+      --accent2: #a142f4;
+      --accent3: #ff7043;
+      --text: #1f1f1f;
+      --text2: #5f6368;
+      --text3: #70757a;
+      --glow: 0 10px 30px rgba(66, 133, 244, 0.15);
+      --glow2: 0 10px 40px rgba(155, 81, 224, 0.12);
+      --nav-bg: rgba(240, 244, 249, 0.75);
     }
 
     [data-theme='dark'] {
-      --bg: #0a0a0f;
-      --bg2: #13131f;
-      --surface: #1a1a24;
-      --surface2: #242430;
+      --bg: #080810;
+      --bg2: #0f0f20;
+      --surface: rgba(16, 16, 36, 0.65);
+      --surface2: rgba(32, 32, 64, 0.6);
       --border: rgba(255, 255, 255, 0.08);
       --border2: rgba(255, 255, 255, 0.15);
-      --text: #f9fafb;
-      --text2: #d1d5db;
-      --text3: #9ca3af;
-      --nav-bg: rgba(10, 10, 15, 0.85);
+      --accent: #8ab4f8;
+      --accent2: #c58af9;
+      --accent3: #ffab91;
+      --text: #f1f3f4;
+      --text2: #bdc1c6;
+      --text3: #9aa0a6;
+      --glow: 0 10px 35px rgba(138, 180, 248, 0.25);
+      --glow2: 0 10px 45px rgba(197, 138, 249, 0.2);
+      --nav-bg: rgba(8, 8, 16, 0.75);
     }
 
     * {
@@ -1920,6 +1925,242 @@
     .timeline-path-bg { position: absolute; top: 0; left: 0; width: 2px; height: 100%; background: var(--border); z-index: 0; }
     .timeline-path-fill { position: absolute; top: 0; left: 0; width: 2px; background: var(--accent); z-index: 1; height: 0%; box-shadow: 0 0 10px var(--accent); transition: height 0.15s ease-out; }
 
+    /* ==========================================================
+       NEXT-GEN / PRO AESTHETICS OVERRIDES (GEMINI COLOR SCHEME)
+       ========================================================== */
+
+    /* 1. Seamless canvas backgrounds */
+    #education,
+    #projects,
+    #awards,
+    #contact {
+      background: transparent !important;
+    }
+
+    /* 2. Floating Immersive Gemini Aura & Grid System */
+    .gradient-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: 0;
+      overflow: hidden;
+      pointer-events: none;
+      background: var(--bg);
+      transition: background 0.4s ease;
+    }
+    
+    .gradient-bg::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: radial-gradient(var(--border) 1.5px, transparent 1.5px);
+      background-size: 32px 32px;
+      opacity: 0.45;
+      pointer-events: none;
+      mask-image: radial-gradient(circle at 50% 50%, black 60%, transparent 100%);
+      -webkit-mask-image: radial-gradient(circle at 50% 50%, black 60%, transparent 100%);
+    }
+
+    /* Gemini aura color blobs */
+    .blob {
+      position: absolute;
+      width: clamp(450px, 55vw, 900px);
+      height: clamp(450px, 55vw, 900px);
+      border-radius: 50%;
+      filter: blur(140px);
+      opacity: 0.24;
+      mix-blend-mode: screen;
+      animation: floatBlob 25s infinite alternate ease-in-out;
+      pointer-events: none;
+    }
+    
+    [data-theme='light'] .blob {
+      opacity: 0.12;
+      mix-blend-mode: multiply;
+      filter: blur(110px);
+    }
+    
+    /* Blue - Gemini Indigo */
+    .blob-1 {
+      background: linear-gradient(135deg, #4285f4, #9b51e0) !important;
+      top: -10%;
+      left: -10%;
+      animation-duration: 28s;
+    }
+    
+    /* Pink-Purple - Gemini Aurora */
+    .blob-2 {
+      background: linear-gradient(135deg, #e040fb, #ff7043) !important;
+      bottom: -10%;
+      right: -10%;
+      animation-duration: 35s;
+      animation-delay: -7s;
+    }
+    
+    /* Coral Orange - Gemini Aura Spark */
+    .blob-3 {
+      background: linear-gradient(135deg, #4285f4, #e040fb) !important;
+      top: 40%;
+      left: 35%;
+      width: clamp(350px, 38vw, 550px);
+      height: clamp(350px, 38vw, 550px);
+      animation-duration: 22s;
+      animation-delay: -12s;
+      opacity: 0.14;
+    }
+    
+    @keyframes floatBlob {
+      0% {
+        transform: translate(0, 0) scale(1) rotate(0deg);
+      }
+      33% {
+        transform: translate(50px, -80px) scale(1.15) rotate(120deg);
+      }
+      66% {
+        transform: translate(-30px, 40px) scale(0.9) rotate(240deg);
+      }
+      100% {
+        transform: translate(0, 0) scale(1) rotate(360deg);
+      }
+    }
+
+    /* 3. Charismatic Glassmorphic Card Styling */
+    .project-card,
+    .exp-card,
+    .timeline-card,
+    .award-card,
+    .ref-card {
+      background: var(--surface) !important;
+      backdrop-filter: blur(20px) saturate(190%) !important;
+      -webkit-backdrop-filter: blur(20px) saturate(190%) !important;
+      border: 1px solid var(--border) !important;
+      border-radius: 20px !important;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.02) !important;
+      transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    }
+    
+    .project-card:hover,
+    .exp-card:hover,
+    .timeline-card:hover,
+    .award-card:hover,
+    .ref-card:hover {
+      transform: translateY(-8px) scale(1.015) !important;
+      border-color: rgba(155, 81, 224, 0.4) !important;
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1), var(--glow) !important;
+    }
+
+    /* 4. Sub-cards Glassmorphism */
+    .thesis-box,
+    .metric-card {
+      background: rgba(255, 255, 255, 0.02) !important;
+      backdrop-filter: blur(8px) !important;
+      -webkit-backdrop-filter: blur(8px) !important;
+      border: 1px solid var(--border) !important;
+      border-radius: 14px !important;
+      transition: all 0.3s ease !important;
+    }
+    
+    [data-theme='light'] .thesis-box,
+    [data-theme='light'] .metric-card {
+      background: rgba(15, 23, 42, 0.02) !important;
+    }
+
+    .thesis-box:hover,
+    .metric-card:hover {
+      border-color: var(--accent) !important;
+      background: rgba(255, 255, 255, 0.05) !important;
+    }
+
+    /* 5. Charismatic Gemini Gradient Buttons */
+    .btn-primary {
+      background: linear-gradient(135deg, #4285f4, #9b51e0, #ff7043) !important;
+      color: #ffffff !important;
+      box-shadow: 0 4px 15px rgba(155, 81, 224, 0.35) !important;
+      font-weight: 600 !important;
+      border: none !important;
+      border-radius: 8px !important;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    }
+    .btn-primary:hover {
+      transform: translateY(-3px) scale(1.03) !important;
+      box-shadow: 0 12px 30px rgba(155, 81, 224, 0.55) !important;
+    }
+    
+    .btn-outline {
+      border: 1px solid var(--border2) !important;
+      background: rgba(255, 255, 255, 0.04) !important;
+      backdrop-filter: blur(8px) !important;
+      -webkit-backdrop-filter: blur(8px) !important;
+      border-radius: 8px !important;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    }
+    .btn-outline:hover {
+      background: var(--surface2) !important;
+      border-color: var(--accent2) !important;
+      color: var(--accent) !important;
+    }
+
+    /* 6. Dynamic Modal Glassmorphism */
+    .modal-content {
+      background: var(--surface) !important;
+      backdrop-filter: blur(28px) saturate(200%) !important;
+      -webkit-backdrop-filter: blur(28px) saturate(200%) !important;
+      border: 1px solid var(--border) !important;
+      border-radius: 20px !important;
+      box-shadow: 0 35px 70px rgba(0, 0, 0, 0.2), var(--glow) !important;
+    }
+
+    /* 7. Next-gen Glow Badges */
+    .open-badge {
+      background: rgba(155, 81, 224, 0.08) !important;
+      border: 1px solid rgba(155, 81, 224, 0.18) !important;
+      backdrop-filter: blur(12px) !important;
+      -webkit-backdrop-filter: blur(12px) !important;
+      border-radius: 20px !important;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    }
+    .open-badge:hover {
+      border-color: rgba(66, 133, 244, 0.4) !important;
+      box-shadow: var(--glow2) !important;
+      transform: translateY(-2px);
+    }
+    .open-badge-dot {
+      color: var(--accent2) !important;
+    }
+    .pulse-dot {
+      background: var(--accent2) !important;
+      box-shadow: 0 0 10px var(--accent2);
+    }
+
+    /* 8. Text selection neon highlight */
+    ::selection {
+      background: rgba(155, 81, 224, 0.25);
+      color: var(--text);
+    }
+
+    /* 9. Gemini Gradient Shimmer for Hero title */
+    .hero-name .line:nth-child(3) span {
+      animation-delay: 0.3s;
+      background: linear-gradient(90deg, #4285f4, #9b51e0, #e040fb, #ff7043) !important;
+      -webkit-background-clip: text !important;
+      -webkit-text-fill-color: transparent !important;
+      background-clip: text !important;
+      display: inline-block !important;
+    }
+
+    /* 10. Scroll bar & timeline path with Gemini gradient */
+    .progress-bar {
+      background: linear-gradient(90deg, #4285f4, #9b51e0, #e040fb, #ff7043) !important;
+    }
+    .timeline-path-fill {
+      background: linear-gradient(180deg, #4285f4, #9b51e0, #ff7043) !important;
+      box-shadow: 0 0 12px rgba(155, 81, 224, 0.6) !important;
+    }
 
   </style>
 </head>
@@ -1997,9 +2238,9 @@
             <div class="line"><span>Tabassum</span></div>
           </h1>
           <p class="hero-desc">
-            Erasmus Mundus graduate with a double master's in Applied Mathematics and Mathematical Engineering. I build <strong>surrogate models,
+            PhD Student in Cloud Assisted AI and Controls at Linköping University. I build <strong>surrogate models,
               reinforcement learning controllers</strong>, and data-driven solutions at the intersection of mathematics
-            and AI — from autonomous Solutions  to FEM simulations.
+            and AI — from autonomous systems to cloud-assisted controls.
           </p>
           <div class="hero-actions">
             <a href="#projects" class="btn-primary">
@@ -2054,6 +2295,8 @@
         <div class="ticker-item"><i class='bx bx-network-chart'></i> FreeFem++</div>
         <div class="ticker-item"><i class='bx bxl-c-plus-plus'></i> C++</div>
         <div class="ticker-item"><i class='bx bx-bot'></i> ROS</div>
+        <div class="ticker-item"><i class='bx bx-cloud'></i> Cloud AI</div>
+        <div class="ticker-item"><i class='bx bx-slider-alt'></i> Controls</div>
       </div>
       <!-- Duplicate Block for Seamless Loop -->
       <div class="ticker-content">
@@ -2065,6 +2308,8 @@
         <div class="ticker-item"><i class='bx bx-network-chart'></i> FreeFem++</div>
         <div class="ticker-item"><i class='bx bxl-c-plus-plus'></i> C++</div>
         <div class="ticker-item"><i class='bx bx-bot'></i> ROS</div>
+        <div class="ticker-item"><i class='bx bx-cloud'></i> Cloud AI</div>
+        <div class="ticker-item"><i class='bx bx-slider-alt'></i> Controls</div>
       </div>
     </div>
   </div>
@@ -2080,23 +2325,16 @@
       </div>
       <div class="about-grid">
         <div class="about-text reveal">
-          <p>I am a <strong>Mathematical Engineering graduate</strong> and driven applied mathematician with hands-on
-            experience in simulation-based optimization and AI-driven control, gained through both industrial and
-            academic research across Europe and Asia.</p>
-          <p>I completed the prestigious <strong>Erasmus Mundus RealMaths Double Degree</strong> programme, studying at
-            the University of L'Aquila (Italy) and Karlstad University (Sweden).</p>
-          <p>My master's thesis was conducted as an internship with the <strong>Volvo Group</strong>, where I developed
-            surrogate models and deployed reinforcement learning solutions for autonomous excavation. Subsequently, I
-            worked as a <strong>Research Intern at Kanazawa University, Japan</strong>, exploring surface PDEs, FEM,
-            LLMs, and Deep Learning.</p>
+          <p>I am currently a <strong>PhD Student at Linköping University (Sweden)</strong>, working on <strong>Cloud Assisted AI and Controls</strong>. My research focuses on integrating cloud computing paradigms with machine learning and control systems to design scalable, real-time, and intelligent closed-loop control solutions.</p>
+          <p>Prior to starting my PhD, I completed the prestigious <strong>Erasmus Mundus RealMaths Double Degree</strong> programme, studying at the University of L'Aquila (Italy) and Karlstad University (Sweden).</p>
+          <p>My master's thesis was conducted as an internship with the <strong>Volvo Group</strong>, where I developed surrogate models and deployed reinforcement learning solutions for autonomous excavation. Subsequently, I worked as a <strong>Research Intern at Kanazawa University, Japan</strong>, exploring surface PDEs, FEM, LLMs, and Deep Learning.</p>
           <ul class="info-list">
-            <li><span class="lbl">Location</span><span class="val">Göteborg, Sweden</span></li>
+            <li><span class="lbl">Location</span><span class="val">Linköping, Sweden</span></li>
             <li><span class="lbl">Email</span><span class="val"><a
                   href="mailto:nomantabassum38@gmail.com">nomantabassum38@gmail.com</a></span></li>
             <li><span class="lbl">LinkedIn</span><span class="val"><a
                   href="https://www.linkedin.com/in/m-noman-tabassum/" target="_blank">m-noman-tabassum</a></span></li>
-            <li><span class="lbl">Status</span><span class="val" style="color:var(--accent)">● Open to PhD & Research
-                Roles</span></li>
+            <li><span class="lbl">Status</span><span class="val" style="color:var(--accent)">● PhD Student @ Linköping University</span></li>
           </ul>
         </div>
         <div class="interest-grid reveal section-content">
@@ -2146,6 +2384,26 @@
       </div>
       <div class="timeline">
         <div class="timeline-path-bg"></div><div class="timeline-path-fill"></div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-period">Jun 2026 – Present</div>
+          <div class="timeline-card">
+            <div class="timeline-inst">
+              <img src="Linkoping_University_Logo.svg" class="inst-icon">
+              <div class="inst-info">
+                <div class="inst-name">Linköping University</div>
+                <div class="inst-loc">Linköping, Sweden</div>
+              </div>
+            </div>
+            <div class="degree-title">PhD in Cloud Assisted AI and Controls</div>
+            <div class="courses-list">
+              <span class="course-tag">Cloud Assisted AI</span>
+              <span class="course-tag">Control Systems</span>
+              <span class="course-tag">Controls</span>
+            </div>
+          </div>
+        </div>
+
         <div class="timeline-item">
           <div class="timeline-dot"></div>
           <div class="timeline-period">Jul 2025 – Aug 2025</div>
@@ -2849,8 +3107,7 @@
         <div class="contact-text reveal">
           <div class="section-num">08</div>
           <h2>Let's Build Something <span>Remarkable</span></h2>
-          <p>I'm actively seeking PhD positions and research-oriented roles in applied mathematics, optimization,
-            simulation, and AI-driven modeling. Open to collaborations and opportunities worldwide.</p>
+          <p>I am open to research collaborations and discussing interesting research problems in applied mathematics, optimization, simulation, and AI-driven modeling.</p>
           <div class="contact-links">
             <a href="mailto:nomantabassum38@gmail.com" class="contact-link">
               <div class="contact-link-icon">✉</div>
@@ -2872,11 +3129,10 @@
         <div class="contact-right reveal">
           <div class="open-badge">
             <div class="open-badge-dot">
-              <div class="pulse-dot"></div>Open to opportunities
+              <div class="pulse-dot"></div>Open to collaborations
             </div>
-            <h3>Seeking PhD & Research Roles</h3>
-            <p>Particularly interested in positions combining applied mathematics, machine learning, optimization, and
-              autonomous systems research. Eligible to work in Sweden and EU.</p>
+            <h3>Research Collaboration & Problems</h3>
+            <p>Interested in collaborating on research projects combining cloud-assisted AI, advanced control systems, and machine learning. Feel free to reach out with interesting problems.</p>
           </div>
           <div style="background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:28px;">
             <div
@@ -2891,7 +3147,7 @@
               <div style="height:1px;background:var(--border)"></div>
               <div style="display:flex;justify-content:space-between;align-items:center;font-size:0.85rem">
                 <span style="color:var(--text2)">Based In</span>
-                <span style="color:var(--text);font-family:'Roboto Mono',monospace;font-size:0.75rem">🇸🇪 Göteborg,
+                <span style="color:var(--text);font-family:'Roboto Mono',monospace;font-size:0.75rem">🇸🇪 Linköping,
                   Sweden</span>
               </div>
               <div style="height:1px;background:var(--border)"></div>
@@ -2911,7 +3167,7 @@
   <!-- FOOTER -->
   <footer>
     <div class="container">
-      <div class="footer-copy">© 2025 Muhammad Noman Tabassum. All rights reserved.</div>
+      <div class="footer-copy">© 2026 Muhammad Noman Tabassum. All rights reserved.</div>
     </div>
   </footer>
 
