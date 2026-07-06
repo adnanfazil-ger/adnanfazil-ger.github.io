@@ -1,8 +1,8 @@
-# Muhammad Noman Tabassum — Portfolio
+# Adnan Fazil — Portfolio
 
-A professional, fully responsive, and highly interactive academic portfolio website for **Muhammad Noman Tabassum**, Applied Mathematician & AI Researcher.
+A professional, fully responsive, and highly interactive academic portfolio website for **Adnan Fazil**, Applied Mathematician & Geometric Analyst.
 
-🌐 **Live Website:** [https://nomantabassum38.github.io](https://nomantabassum38.github.io)
+🌐 **Live Website:** [https://adnanfazil-ger.github.io](https://adnanfazil-ger.github.io)
 
 ## 🚀 Features
 - **Modern & Premium Design:** Sleek typography (Playfair Display & Inter), minimal glassmorphism, and a professional layout engineered for academic and research presentation.
@@ -15,21 +15,11 @@ A professional, fully responsive, and highly interactive academic portfolio webs
 - **HTML5** (Semantic structure)
 - **Vanilla CSS3** (Custom variables, Flexbox/Grid, keyframe animations)
 - **Vanilla JavaScript** (Intersection Observers, DOM manipulation, Theme management)
-- **No massive external frameworks** — keeping it lightning-fast, lightweight, and universally compatible.
-
-## ⚙️ How to Run Locally
-Since this is a pure vanilla HTML/CSS/JS project, you can simply clone the repository and open the file directly in your browser:
-
-```bash
-git clone https://github.com/nomantabassum38/nomantabassum38.github.io.git
-cd nomantabassum38.github.io
-```
-
-Double-click `index.html` to view the site immediately. No build steps, `npm install`, or local dev servers are required!
+- **No massive external frameworks** — keeping it lightweight and universally compatible.
 
 ## 📬 Contact & Links
-- **Email:** nomantabassum38@gmail.com
-- **LinkedIn:** [m-noman-tabassum](https://www.linkedin.com/in/m-noman-tabassum/)
+- **Email:** adnanfazil32@gmail.com
+- **LinkedIn:** [adnan-fazil](https://www.linkedin.com/in/adnan-fazil/)
 
 ---
-*© 2025 Muhammad Noman Tabassum. All rights reserved.*
+*© 2026 Adnan Fazil. All rights reserved.*
